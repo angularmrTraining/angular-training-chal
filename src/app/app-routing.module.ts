@@ -13,7 +13,12 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'favorites', component: ContactsListComponent },
   { path: 'new-contact', component: ContactFormComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  {
+    path: '',
+    redirectTo: '/contacts',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
