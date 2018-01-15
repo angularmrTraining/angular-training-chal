@@ -3,15 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {
   ContactsListComponent,
-  ContactFormComponent
+  ContactFormComponent,
+  FavoritesContactsComponent
 } from './contacts/components';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'contacts', component: ContactsListComponent },
+  { path: 'favorites', component: FavoritesContactsComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'favorites', component: ContactsListComponent },
   { path: 'new-contact', component: ContactFormComponent },
   { path: 'profile', component: ProfileComponent },
   {

@@ -9,7 +9,8 @@ import { SidebarComponent } from './blocks/sidebar/sidebar.component';
 import {
   ContactsListComponent,
   ContactCardComponent,
-  ContactFormComponent
+  ContactFormComponent,
+  FavoritesContactsComponent
 } from './contacts/components';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -24,7 +25,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ContactCardComponent,
     ContactFormComponent,
     ProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    FavoritesContactsComponent
   ],
   imports: [
     BrowserModule,
