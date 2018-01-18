@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Contact } from '../../../core/model/contact';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'contact-book-contact-card',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() contact: Contact;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
+
 
 }

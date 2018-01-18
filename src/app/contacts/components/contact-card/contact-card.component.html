@@ -7,14 +7,14 @@
         </a>
       </div>
       <div class="col-sm-7 col-md-7 text-center text-lg-left">
-        <h3 class="d-inline">Mary Chesnut</h3>
-        <h6>Job Title</h6>
+        <h3 class="d-inline">{{contact.firstName}} {{contact.lastName}}</h3>
+        <h6>{{contact.bio}}</h6>
       </div>
       <div class="col-sm-2 col-md-2 text-center text-lg-left">
-        <a href="" class="text-danger h5">
+        <a  class="text-danger h5">
           <i class="fa fa-trash"></i>
         </a>
-        <a href="" class="text-primary h5">
+        <a [routerLink]="['/contacts', contact._id]" class="text-primary h5">
           <i class="fa fa-pencil"></i>
         </a>
       </div>

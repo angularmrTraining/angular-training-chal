@@ -1,0 +1,45 @@
+<fieldset class="pretty-set">
+  <legend>
+    <label for="">Address </label>
+  </legend>
+  <div class="row">
+    <div class="col">
+      <label for="">Line One: </label>
+      <input type="text" class="form-control" id="lineOne" required minlength="4" [(ngModel)]="address.lineOne" name="lineOne" #lineOne="ngModel">
+      <div [hidden]="lineOne.valid || lineOne.pristine" class="alet alert-danger">
+        This line is required!!
+      </div>
+    </div>
+    <div class="col">
+      <label for="">Line Two: </label>
+      <input type="text" class="form-control" id="lineTwo" [(ngModel)]="address.lineTwo" nam e="lineTwo" #lineTwo="ngModel">
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <label for="">Country: </label>
+        <input type="text" class="form-control" id="country" required [(ngModel)]="address.country" name="country" #country="ngModel">
+        <div [hidden]="country.valid || country.pristine" class="alet alert-danger">
+          This Country is required!!
+        </div>
+      </div>
+      <div class="col">
+        <label for="">City: </label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="address.city" name="city" #city="ngModel">
+        <div [hidden]="city.valid || city.pristine" class="alet alert-danger">
+          This City is required!!
+        </div>
+      </div>
+      <div class="col">
+          <label for="">State: </label>
+          <input type="text" class="form-control" id="state" [(ngModel)]="address.state" name="state" #state="ngModel">
+        </div>
+      <div class="col">
+        <label for="">Zip Code: </label>
+        <input type="text" class="form-control" id="zipCode" [(ngModel)]="address.zipCode" name="zipCode" #zipCode="ngModel">
+        <div [hidden]="zipCode.valid || zipCode.pristine" class="alet alert-danger">
+          This Zip Code is required!!
+        </div>
+      </div>
+    </div>
+</fieldset>

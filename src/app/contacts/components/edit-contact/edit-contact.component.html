@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h2>Edit Contact</h2>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+          <contact-book-contact-form [contact]="contact"></contact-book-contact-form>
+        </form>
+      </div>
+      <!-- Card Footer -->
+      <div class="card-footer">
+        <a [routerLink]="['/contacts']" class="btn btn-warning">
+          Cancel
+        </a>
+        <button class="btn btn-success" [disabled]="!contactForm.form.valid" (click)="onSubmit()">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

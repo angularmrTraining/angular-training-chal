@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Contact } from '../../../core/model/contact';
+import { ContactService } from '../../../core/service/contact.service';
+
 
 @Component({
   selector: 'contact-book-contact-form',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
-  constructor() { }
+  genders = ['male', 'female'];
+  @Input() contact: Contact;
 
-  ngOnInit() {
-  }
+  constructor(
+    private contactService: ContactService
+  ) { }
+
+  ngOnInit() { }
 
 }
