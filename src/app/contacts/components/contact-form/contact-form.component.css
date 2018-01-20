@@ -1,0 +1,19 @@
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42A948;
+  /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+  /* red */
+}
+.bloc-separator{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.bloc-shadow{
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+  padding: 50px;
+  border-radius: 6px;
+}

@@ -1,0 +1,48 @@
+   <div class="form-group"> 
+    <div class="row">
+      <div class="col">
+        <label for="">Line 1</label>
+        <input type="text" class="form-control" id="lineOne" required [(ngModel)]="adress.lineOne" name="lineOne" #lineOne="ngModel">
+        <div [hidden]="lineOne.valid || lineOne.pristine" class="alet alert-damger">
+          line1 is required!!
+        </div>
+      </div>
+      <div class="col">
+        <label for="">Line 2</label>
+        <input type="text" class="form-control" id="lineTwo" required [(ngModel)]="adress.lineTwo" name="lineTwo" #lineTwo="ngModel">
+        <div [hidden]="lineTwo.valid || lineTwo.pristine" class="alet alert-damger">
+          line2 is required!!
+        </div>
+      </div>
+      <div class="col">
+        <label for="">City</label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="adress.city" name="city" #city="ngModel">
+        <div [hidden]="city.valid || city.pristine" class="alet alert-damger">
+          City is required!!
+        </div>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col">
+        <label for="">State</label>
+        <input type="text" class="form-control" id="stat" required [(ngModel)]="adress.state" name="state" #state="ngModel">
+        <div [hidden]="state.valid || state.pristine" class="alet alert-damger">
+          Country is required!!
+        </div>
+      </div>
+      <div class="col">
+          <label for="">Country</label>
+          <input type="text" class="form-control" id="country" required [(ngModel)]="adress.country" name="country" #country="ngModel">
+          <div [hidden]="country.valid || country.pristine" class="alet alert-damger">
+            Country is required!!
+          </div>
+      </div>
+      <div class="col">
+        <label for="">Zip Code</label>
+        <input type="text" class="form-control" id="zipCode" required [(ngModel)]="adress.zipCode" name="zipCode" #zipCode="ngModel">
+        <div [hidden]="zipCode.valid || zipCode.pristine" class="alet alert-damger">
+          Zip Code is required!!
+        </div>
+      </div>  
+    </div>
+</div>

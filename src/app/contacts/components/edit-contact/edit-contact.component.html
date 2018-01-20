@@ -1,0 +1,19 @@
+<div class="bloc-shadow">
+    <div class="page-header">
+        <h2>Add a New Contact</h2>
+    </div>
+      <hr>
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+      <contact-book-contact-form [contact]="contact"></contact-book-contact-form>
+    </form>
+    <div class="card-footer">
+        <button class="btn btn-warning" >
+          New Contact
+        </button>
+        <button class="btn btn-success" [disabled]="!contactForm.form.valid" (click)="onSubmit()">
+          Submit
+        </button>
+    </div>
+    <hr>
+</div>
+  

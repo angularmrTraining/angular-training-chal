@@ -1,14 +1,42 @@
 <div class="page-header">
-  <h2>Hi </h2>
 </div>
-<p class="lead">Update your profile settings</p>
+<p class="lead big-title">Update your profile settings</p>
 <hr>
 <div class="row">
   <div class="col-md-12">
-    <h3 class="text-justify">
-      <code>TODO: Here you need to integrate in a elegant design your github profile, you can use the github api or try to copy/past
-        your info here!!</code>
-    </h3>
-    <hr>
+    <div class="card bloc-shadow" style =" width:100%; padding-top: 30px; padding-left: 60px;">
+      <img class=" profile-picture" src="{{user.avatar_url}}" alt="{{user.name}}">
+      <div class="edit-profile-summary">
+        <div class="full-name-profile">{{user.name}}</div>
+      </div> 
+      <div class="about-me-section-profile">
+        <div class="medium-title bloc-title-profile">
+          About me
+        </div>
+        <div class="one-info-profile small-label light-grey-label">Location:</div>
+            <p class="one-info-profile">{{user.location}}</p>
+        <div class="small-info-profile one-info-profile">
+            <p><label class="small-bold-label grey-label ">Login:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+              {{user.login}}
+            </p>
+          <p><label class="small-bold-label grey-label ">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            {{user.email}}
+          </p>
+          <p><label class="small-bold-label grey-label">Blog user:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            {{user.blog}}
+          </p>
+          <p><label class="small-bold-label grey-label">Repository: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+            {{user.repos_url}}       
+          </p>
+          <p><label class="small-bold-label grey-label">Repository: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+            {{user.repos_url}}       
+          </p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{user.created_at | date : 'fullDate'}}</small>
+      </div>
+    </div>
   </div>
 </div>
+

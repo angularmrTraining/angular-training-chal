@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {
   ContactsListComponent,
-  ContactFormComponent,
+  NewContactComponent,
+  EditContactComponent,
   FavoritesContactsComponent
 } from './contacts/components';
 import { ProfileComponent } from './profile/profile.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'contacts', component: ContactsListComponent },
   { path: 'favorites', component: FavoritesContactsComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'new-contact', component: ContactFormComponent },
+  { path: 'new-contact', component: NewContactComponent },
+  { path: 'contacts/:id', component: EditContactComponent },
   { path: 'profile', component: ProfileComponent },
   {
     path: '',

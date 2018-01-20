@@ -1,3 +1,20 @@
 .contact-card {
   margin-bottom: 5px;
 }
+.image{
+  width: 200px;
+  height: 200px;
+}
+.card-contact-sizing{
+  height: 500px;
+  margin-bottom: 15px;
+}
+.adjust-padding-card{
+  margin-left: 15px;
+
+}
+.bloc-shadow{
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+  padding: 50px;
+  border-radius: 6px;
+}
