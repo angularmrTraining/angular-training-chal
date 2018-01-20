@@ -1,23 +1,23 @@
-<div class="card contact-card">
+
+<div class="card card-contact-sizing bloc-shadow" style="width: 18rem;" >
+  <div class="card-body adjust-padding-card">
+    <h5 class="card-title">{{contact.firstName}} {{contact.lastName}}</h5>
+    <p class="card-text"> email: {{contact.email}}.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">phone:{{contact.phone}}.</li>
+    <li class="list-group-item">address : {{contact.addres}}. </li>
+  </ul>
+  <p class="adjust-padding-card"> Bio: {{contact.bio}}</p>
   <div class="card-body">
-    <div class="row align-items-center">
-      <div class="col-sm-3 col-md-3 mx-auto text-nowrap text-center px-2">
-        <a href="" class="btn btn-primary btn-rounded">
-          MC
-        </a>
-      </div>
-      <div class="col-sm-7 col-md-7 text-center text-lg-left">
-        <h3 class="d-inline">Mary Chesnut</h3>
-        <h6>Job Title</h6>
-      </div>
-      <div class="col-sm-2 col-md-2 text-center text-lg-left">
-        <a href="" class="text-danger h5">
-          <i class="fa fa-trash"></i>
-        </a>
-        <a href="" class="text-primary h5">
-          <i class="fa fa-pencil"></i>
-        </a>
-      </div>
-    </div>
+    <a (click)="delete(contact)"  class="text-danger h5" >
+      <i class="fa fa-trash"></i>
+    </a>
+    <a (click)="favorite(contact)"  class="text-danger h5" >
+      <i class="fa fa-star-o"></i>
+    </a>
+    <a [routerLink]="['/contacts', contact._id]" class="text-primary h5">
+      <i class="fa fa-pencil"></i>
+    </a>
   </div>
 </div>

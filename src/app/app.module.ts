@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
+
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './blocks/header/header.component';
@@ -10,10 +16,18 @@ import {
   ContactsListComponent,
   ContactCardComponent,
   ContactFormComponent,
-  FavoritesContactsComponent
+  FavoritesContactsComponent,
+  NewContactComponent,
+  EditContactComponent
 } from './contacts/components';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { ContactService } from './services/contact.service';
+import { GithubService } from './services/github.service';
+
+import { AdressComponent } from './contacts/components/contact-form/adress/adress.component';
+
 
 
 @NgModule({
@@ -26,13 +40,22 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ContactFormComponent,
     ProfileComponent,
     DashboardComponent,
-    FavoritesContactsComponent
+    FavoritesContactsComponent,
+    AdressComponent,
+    NewContactComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpModule,
+    HttpClientModule
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [ ContactService, GithubService ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

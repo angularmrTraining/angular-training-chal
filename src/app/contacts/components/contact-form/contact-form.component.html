@@ -1,22 +1,37 @@
-<div class="page-header">
-  <h2>Add a New Contact</h2>
-</div>
-<hr>
-<div class="row">
-  <div class="col-md-12">
-    <h3 class="text-justify">
-      <code>TODO: Create new contact form with save and a cancel button!!</code>
-    </h3>
-    <hr>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md-12">
-    <p class="text-center">
-      Check out the contact form repository to finish this task. check the api doc
-      <br>
-      <a href="https://mini-crm-api.herokuapp.com/doc" class="btn btn-sm btn-primary">API DOC</a>
-    </p>
-  </div>
+<div class="form-group">
+    <input type="text" class="form-control" id="firstName" required [(ngModel)]="contact.firstName" placeholder="First Name" name="firstName" #firstName="ngModel">
+    <div [hidden]="firstName.valid || firstName.pristine" class="alet alert-damger">
+      First name is required!!
+    </div>
 </div>
+<div class="form-group">
+    <input type="text" class="form-control" id="lastName" required [(ngModel)]="contact.lastName" placeholder="last Name" name="lastName" #lastName="ngModel">
+    <div [hidden]="lastName.valid || lastName.pristine" class="alet alert-damger">
+      Last name is required!!
+    </div>
+</div>
+<div class="form-group">
+    <select name="" id="gender" class="form-control"  name="gender" [(ngModel)]="contact.gender">
+        <option *ngFor="let gender of genders" [value]="role">{{gender}}</option>
+      </select>
+</div>
+<div class="form-group">
+    <input type="email" class="form-control" id="email" required  email [(ngModel)]="contact.email" placeholder="Enter email" name="email" #email="ngModel">
+    <div [hidden]="email.valid || email.pristine" class="alet alert-damger">
+      email format is not correct !!
+    </div>
+</div>
+<div class="form-group">
+    <input type="text" class="form-control" id="phone" required [(ngModel)]="contact.phone" placeholder="phone number" name="phone" #phone="ngModel">
+    <div [hidden]="phone.valid || phone.pristine" class="alet alert-damger">
+     phone number is required!!
+    </div>
+</div>
+<div class="form-group">
+    <input type="text" class="form-control" id="bio" required [(ngModel)]="contact.bio" placeholder="BIO " name="bio" #phone="ngModel">
+</div>
+<hr class="bloc separator">
+<!-- adress -->
+<app-adress [adress]="contact.address"></app-adress>
+<!-- adress -->
