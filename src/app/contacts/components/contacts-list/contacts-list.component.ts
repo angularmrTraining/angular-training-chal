@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../../core/model/contact';
 import { ContactService } from '../../../core/service/contact.service';
+import { ContactCardComponent } from '../contact-card/contact-card.component';
+import { Observable } from 'rxjs/Observable';
+import { concat } from 'rxjs/operators/concat';
 
 @Component({
   selector: 'contact-book-contacts-list',
@@ -9,7 +12,7 @@ import { ContactService } from '../../../core/service/contact.service';
 })
 export class ContactsListComponent implements OnInit {
 
-  contactList:  Contact[];
+  contacts: Observable<Contact[]>;
 
   constructor(private contactService: ContactService) { }
 
@@ -18,11 +21,22 @@ export class ContactsListComponent implements OnInit {
   }
 
   getContacts(): void {
-    this.contactService.getContacts()
-      .subscribe(response => {
-        this.contactList = response['contacts'];
-        console.log(response);
-      });
+    this.contacts = this.contactService.contacts;
+    this.contactService.loadAll();
   }
 
+  deleteContact(contact) {
+    if(window.confirm(`Are sure you want to remove ${contact.email} ?`)){
+      this.contactService.remove(contact).subscribe(data => console.log('deleted'));
+    } 
+  }
+
+  togglefavoriteContact(contact) {
+    if(contact.favorite){
+      this.contactService.removeFromFavorite(contact)
+    } else { 
+      this.contactService.addToFavorite(contact)
+    }
+    contact.favorite =   contact.favorite
+  }
 }

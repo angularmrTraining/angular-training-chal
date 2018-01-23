@@ -21,12 +21,13 @@ export class NewContactComponent implements OnInit {
   }
 
   onSubmit() {
-    this.contactService.addContact(this.contact)
+    this.contactService.create(this.contact)
       .subscribe(() => this.submitted = true);
   }
 
   newContact() {
     this.contact = new Contact();
+    this.submitted = false;
   }
 
 }

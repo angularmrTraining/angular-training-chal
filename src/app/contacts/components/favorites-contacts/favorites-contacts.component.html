@@ -1,106 +1,17 @@
 <div class="page-header">
-  <h2>Your Favorites Contacts</h2>
-</div>
-<p class="lead">Contacts database Managements</p>
-<hr>
-<div class="row">
-  <div class="col-md-12">
-    <h3 class="text-justify">
-      <code>TODO: Add Your favorite contacts Here, and implements the delete action with confirmation and edit contact action!!</code>
-    </h3>
-    <hr>
+    <h2>Your Favorite Contacts</h2>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
+  <p class="lead">Contacts database Managements</p>
+  <hr>
+  
+  <div class="row">
+    
+    <div class="col-md-6 col-lg-4 col-sm-10 mx-auto" *ngFor='let contact of contacts | async'>
+      <contact-book-contact-card 
+        (deleteEvent)="deleteContact($event)"
+        (favoriteEvent)="togglefavoriteContact($event)"
+        [contact]="contact" >
+      </contact-book-contact-card>
+    </div>
   </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-</div>
+  

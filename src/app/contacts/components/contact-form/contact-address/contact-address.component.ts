@@ -10,7 +10,9 @@ export class ContactAddressComponent implements OnInit {
 
   @Input() address: Address;
 
-  constructor() { }
+  constructor() {
+    //this.address = new Address();
+   }
 
   ngOnInit() {
   }

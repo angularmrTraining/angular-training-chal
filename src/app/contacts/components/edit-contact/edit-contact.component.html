@@ -7,12 +7,12 @@
     <div class="card">
       <div class="card-body">
         <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
-          <contact-book-contact-form [contact]="contact"></contact-book-contact-form>
+          <contact-book-contact-form [contact]="contact | async"></contact-book-contact-form>
         </form>
       </div>
       <!-- Card Footer -->
       <div class="card-footer">
-        <a [routerLink]="['/contacts']" class="btn btn-warning">
+        <a (click)="cancelEdit()" class="btn btn-warning">
           Cancel
         </a>
         <button class="btn btn-success" [disabled]="!contactForm.form.valid" (click)="onSubmit()">

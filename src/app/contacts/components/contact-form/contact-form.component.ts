@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Contact } from '../../../core/model/contact';
 import { ContactService } from '../../../core/service/contact.service';
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -13,9 +14,7 @@ export class ContactFormComponent implements OnInit {
   genders = ['male', 'female'];
   @Input() contact: Contact;
 
-  constructor(
-    private contactService: ContactService
-  ) { }
+  constructor() { }
 
   ngOnInit() { }
 

@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ContactService } from './core/service/contact.service';
+import { GithubApiService } from './core/service/github-api.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './blocks/header/header.component';
@@ -46,7 +47,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ContactService],
+  providers: [ContactService, GithubApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

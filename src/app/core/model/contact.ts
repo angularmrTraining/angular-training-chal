@@ -9,10 +9,16 @@ export class Contact {
   public phone: string;
   public bio?: string;
   public gender?: string;
+  public favorite?: boolean;
   public created_at?: any;
 
   constructor() {
     this.address = new Address();
+    this.favorite = false;
+   }
+
+   valueOf(){
+     return this['_id'];
    }
 
 }
