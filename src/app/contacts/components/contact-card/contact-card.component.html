@@ -1,21 +1,20 @@
 <div class="card contact-card">
   <div class="card-body">
-    <div class="row align-items-center">
-      <div class="col-sm-3 col-md-3 mx-auto text-nowrap text-center px-2">
-        <a href="" class="btn btn-primary btn-rounded">
-          MC
-        </a>
-      </div>
-      <div class="col-sm-7 col-md-7 text-center text-lg-left">
-        <h3 class="d-inline">Mary Chesnut</h3>
-        <h6>Job Title</h6>
+    <div class="row align-items-center">  
+      <div class="col-sm-9 col-md-9 text-center text-lg-left">
+        <h3 class="d-inline">{{contact.firstName}} {{contact.lastName}}</h3>
+        <h6>{{contact.bio}}</h6>
       </div>
       <div class="col-sm-2 col-md-2 text-center text-lg-left">
-        <a href="" class="text-danger h5">
+        <a (click)="onDelete(contact)" class="text-danger h5">
           <i class="fa fa-trash"></i>
         </a>
-        <a href="" class="text-primary h5">
+        <a [routerLink]="['/contacts', contact['_id']]" class="text-primary h5">
           <i class="fa fa-pencil"></i>
+        </a>
+        <a (click)="onFavorite(contact)" class="text-primary h5">
+          <i class="fa fa-heart" *ngIf="contact.favorite"></i>
+          <i class="fa fa-heart-o" *ngIf="!contact.favorite"></i>
         </a>
       </div>
     </div>

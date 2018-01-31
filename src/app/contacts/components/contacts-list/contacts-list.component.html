@@ -3,104 +3,14 @@
 </div>
 <p class="lead">Contacts database Managements</p>
 <hr>
-<div class="row">
-  <div class="col-md-12">
-    <h3 class="text-justify">
-      <code>TODO: Add Your contacts Here, and implements the delete action with confirmation and edit contact action!!</code>
-    </h3>
-    <hr>
-  </div>
-</div>
 
 <div class="row">
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
-  </div>
-  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto">
-    <contact-book-contact-card></contact-book-contact-card>
+  
+  <div class="col-md-6 col-lg-4 col-sm-10 mx-auto" *ngFor='let contact of contacts | async'>
+    <contact-book-contact-card 
+      (deleteEvent)="deleteContact($event)"
+      (favoriteEvent)="togglefavoriteContact($event)"
+      [contact]="contact" >
+    </contact-book-contact-card>
   </div>
 </div>

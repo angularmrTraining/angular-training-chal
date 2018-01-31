@@ -1,22 +1,47 @@
-<div class="page-header">
-  <h2>Add a New Contact</h2>
-</div>
-<hr>
-<div class="row">
-  <div class="col-md-12">
-    <h3 class="text-justify">
-      <code>TODO: Create new contact form with save and a cancel button!!</code>
-    </h3>
-    <hr>
+<!-- FirstName, LastName and MiddleName -->
+<div class="form-group">
+  <div class="row">
+    <div class="col">
+      <label for="">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="contact.firstName" name="firstName" #firstName="ngModel">
+      <div [hidden]="firstName.valid || firstName.pristine" class="alet alert-danger">
+        First name is required!!
+      </div>
+    </div>
+    <div class="col">
+      <label for="">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="contact.lastName" name="lastName" #lastName="ngModel">
+      <div [hidden]="lastName.valid || lastName.pristine" class="alet alert-danger">
+        Last name is required!!
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-md-12">
-    <p class="text-center">
-      Check out the contact form repository to finish this task. check the api doc
-      <br>
-      <a href="https://mini-crm-api.herokuapp.com/doc" class="btn btn-sm btn-primary">API DOC</a>
-    </p>
+<div class="form-groupe">
+  <div class="row">
+    <div class="col">
+      <label for="">Email</label>
+      <input type="email" class="form-control" id="email" required email [(ngModel)]="contact.email" name="email" #email="ngModel">
+      <div [hidden]="email.valid || email.pristine" class="alet alert-danger">
+        Must be a valid Email
+      </div>
+    </div>
+    <div class="col">
+      <label for="">Phone</label>
+      <input type="text" class="form-control" id="phone" required [(ngModel)]="contact.phone" name="phone" #phone="ngModel">
+      <div [hidden]="phone.valid || phone.pristine" class="alet alert-danger">
+        Phone number is required!!
+      </div>
+    </div>
+    <div class="col">
+      <label for="">Gender</label>
+      <select name="" id="gender" class="form-control" required name="gender" [(ngModel)]="contact.gender">
+        <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+      </select>
+    </div>
   </div>
+</div>
+<!-- /FirstName, LastName and MiddleName -->
+<div class="form-group">
+  <app-contact-address [address]="contact.address"></app-contact-address>
 </div>
